@@ -22,6 +22,25 @@ Ich möchte den Aufbau eines Backends, den Umgang mit einer API sowie die Anbind
 Ich erweitere mein bestehendes Spiel Save the Ball (Lua / LÖVE2D) um ein Backend mit API, das ein SQL-basiertes Leaderboard bereitstellt.
 Das Spiel soll Scores an das Backend senden können, welche persistent in einer Datenbank gespeichert und später wieder abgerufen werden. 
 
+## 20.02
+✍️ Heute habe ich… (50–100 Wörter)
+
+Heute habe ich mich mit dem Backend für mein Projekt beschäftigt. Zuerst habe ich mich definitiv für Node.js mit Express entschieden und die Entwicklungsumgebung eingerichtet. Danach habe ich ein Backend-Projekt erstellt, die benötigten Pakete installiert und einen ersten Server zum Laufen gebracht. Zusätzlich habe ich eine SQLite-Datenbank angebunden. Das Backend konnte ich im Browser testen, wodurch ich gesehen habe, dass alles korrekt funktioniert. Damit habe ich eine gute Grundlage für die weitere Arbeit geschaffen.
+
+☝️ Vergessin sie nicht, ihren Code auf Github hochzuladen
 
 
-## 27.02.2026
+
+
+## 27.02
+
+- [ ] Die bestehende SQLite-Datenbank überprüfen und sicherstellen, dass die Highscore-Tabelle korrekt erstellt ist und Daten aufnehmen kann.
+- [ ] Den POST-Endpunkt verwenden, um Scores zu speichern, und prüfen, ob diese korrekt in der Datenbank abgelegt werden.
+- [ ] Den GET-Endpunkt testen und kontrollieren, ob die Highscores korrekt sortiert und begrenzt zurückgegeben werden.
+- [ ] Den bestehenden Code leicht kommentieren und die wichtigsten Funktionen im README festhalten.
+
+✍️ Heute habe ich… (50–100 Wörter)
+
+
+
+☝️ Vergessin sie nicht, ihren Code auf Github hochzuladen
