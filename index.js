@@ -4,10 +4,10 @@ const sqlite3 = require("sqlite3").verbose();
 const app = express();
 const PORT = 3000;
 
-// Middleware für JSON
+
 app.use(express.json());
 
-// Datenbank (wird automatisch erstellt)
+
 const db = new sqlite3.Database("./database.db", (err) => {
   if (err) {
     console.error("Datenbank-Fehler:", err.message);
@@ -16,7 +16,7 @@ const db = new sqlite3.Database("./database.db", (err) => {
   }
 });
 
-// Tabelle für Highscores
+
 db.run(`
   CREATE TABLE IF NOT EXISTS highscores (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -26,7 +26,7 @@ db.run(`
   )
 `);
 
-// Test-Route
+
 app.get("/", (req, res) => {
   res.json({ message: "Save the Ball API läuft" });
 });
@@ -62,7 +62,7 @@ app.get("/highscores", (req, res) => {
   );
 });
 
-// Server starten
+
 app.listen(PORT, () => {
   console.log(`Server läuft auf http://localhost:${PORT}`);
 });
