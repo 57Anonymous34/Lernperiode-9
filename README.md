@@ -34,7 +34,7 @@ Heute habe ich mich mit dem Backend für mein Projekt beschäftigt. Zuerst habe 
 
 ## 27.02
 
-- [ ] Die bestehende SQLite-Datenbank überprüfen und sicherstellen, dass die Highscore-Tabelle korrekt erstellt ist und Daten aufnehmen kann.
+- [ ] Sqlite installieren.
 - [ ] Den POST-Endpunkt verwenden, um Scores zu speichern, und prüfen, ob diese korrekt in der Datenbank abgelegt werden.
 - [ ] Den GET-Endpunkt testen und kontrollieren, ob die Highscores korrekt sortiert und begrenzt zurückgegeben werden.
 - [ ] Den bestehenden Code leicht kommentieren und die wichtigsten Funktionen im README festhalten.
