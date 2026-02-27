@@ -1,6 +1,6 @@
 # Lern-Periode 9
 
-Zeitraum: … bis …
+
 Projekt: Save the Ball – Leaderboard Backend
 
 # Grob-Planung
@@ -34,13 +34,32 @@ Heute habe ich mich mit dem Backend für mein Projekt beschäftigt. Zuerst habe 
 
 ## 27.02
 
-- [ ] Sqlite installieren.
-- [ ] Den POST-Endpunkt verwenden, um Scores zu speichern, und prüfen, ob diese korrekt in der Datenbank abgelegt werden.
+- [X] Sqlite installieren.
+- [X] Den POST-Endpunkt verwenden, um Scores zu speichern, und prüfen, ob diese korrekt in der Datenbank abgelegt werden.
 - [ ] Den GET-Endpunkt testen und kontrollieren, ob die Highscores korrekt sortiert und begrenzt zurückgegeben werden.
-- [ ] Den bestehenden Code leicht kommentieren und die wichtigsten Funktionen im README festhalten.
+- [X] Den bestehenden Code leicht kommentieren.
 
 ✍️ Heute habe ich… (50–100 Wörter)
 
 
 
 ☝️ Vergessin sie nicht, ihren Code auf Github hochzuladen
+
+
+
+## 06.03
+- [ ] Den GET-Endpunkt testen und kontrollieren, ob die Highscores korrekt sortiert werden.
+- [ ] Der Nutzer muss am Anfang sein Namen eingeben müssen, damit es nachher in der Datenbank gespeichert werden kann.
+- [ ] Den Settings-Button aus dem Spiel entfernen.
+- [ ] Ein Bild des Spiel Logos auf der Hauptseite einbauen, da das Menü aktuell sehr leer wirkt. 
+
+
+✍️ Heute habe ich… (50–100 Wörter)
+
+Heute habe ich SQLite installiert. Ich wollte unbedingt wissen, ob die Verbindung mit der Datenbank klappt. Ich habe den Test im Terminal gemacht und als Ergebnis wurde es im Browser angezeigt. Ich habe noch den „SQLite Viewer“ installiert, damit ich die Datenbank direkt über VS Code sehen kann.
+
+☝️ Vergessin sie nicht, ihren Code auf Github hochzuladen
+
+
+
+
