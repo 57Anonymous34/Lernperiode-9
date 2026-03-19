@@ -63,15 +63,26 @@ Heute habe ich SQLite installiert. Ich wollte unbedingt wissen, ob die Verbindun
 
 ## 20.03
 
-- [ ] Der Nutzer muss am Anfang sein Namen eingeben müssen, damit es nachher in der Datenbank gespeichert werden kann.
-- [ ] Die Buttons sollten auf der Vorderseite in der Mitte seite und nicht links.
-- [ ] Das Logo soll die Vorderseite ausfüllen, sodass nur noch die Buttons darüber sichtbar sind.
+- [X] Der Nutzer muss am Anfang sein Namen eingeben müssen, damit es nachher in der Datenbank gespeichert werden kann.
+- [X] Die Buttons sollten auf der Vorderseite in der Mitte seite und nicht links.
+- [X] Das Logo soll die Vorderseite ausfüllen, sodass nur noch die Buttons darüber sichtbar sind.
 - [ ] Die Punktzahl nach Spielende automatisch in der Datenbank speichern.
 
 
 ✍️ Heute habe ich… (50–100 Wörter)
 
-Heute habe ich den GET-Endpunkt getestet und es war erfolgreich. Es hat funktioniert. Der Test war erfolgreich. Ich habe den Settings-Button entfernt, da er keine Funktion hatte. Auf der Vorderseite habe ich ein Logo hinzugefügt.
+Heute habe ich die Vorderseite meines Spiels verbessert. Der Nutzer muss nun einen Namen eingeben, bevor er das Spiel starten kann. Ausserdem habe ich das Hintergrundlogo angepasst, sodass es im Mittelpunkt steht. Auch die Buttons habe ich neu positioniert und zentriert, damit das Menü übersichtlicher und schöner aussieht.
+
+☝️ Vergessin sie nicht, ihren Code auf Github hochzuladen
+
+## 27.03
+
+- [ ] Den Namen des Spielers und das Spielergebnis automatisch in der Datenbank speichern.
+- [ ] Ein Leaderboard erstellen, damit verschiedene Nutzer die gespeicherten Highscores sehen können.
+- [ ] Die Scores vom Backend im Spiel anzeigen (Leaderboard im Menü oder Game Over Screen einbauen).
+- [ ] Die API-Endpunkte verbessern (z. B. Highscores sortieren und nur die Top 10 zurückgeben).
+
+✍️ Heute habe ich… (50–100 Wörter)
 
 ☝️ Vergessin sie nicht, ihren Code auf Github hochzuladen
 
