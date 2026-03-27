@@ -161,6 +161,24 @@ end
 
 # Result
 
+
+
+https://github.com/user-attachments/assets/76ec5d43-4979-4d90-9a19-b447612b0f0a
+
+
+### Important
+
+Before starting the game, the backend server must be running.
+
+To do this, open the terminal, navigate to the backend folder, and start the server:
+
+```bash
+cd Backend
+node index.js
+```
+
+
+
 # What could go wrong?
 - The backend server is not running
 - Wrong API URL (localhost:3000)
