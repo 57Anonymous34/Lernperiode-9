@@ -77,12 +77,13 @@ Heute habe ich die Vorderseite meines Spiels verbessert. Der Nutzer muss nun ein
 
 ## 27.03
 
-- [ ] Den Namen des Spielers und das Spielergebnis automatisch in der Datenbank speichern.
-- [ ] Ein Leaderboard erstellen, damit verschiedene Nutzer die gespeicherten Highscores sehen können.
-- [ ] Die Scores vom Backend im Spiel anzeigen (Leaderboard im Menü oder Game Over Screen einbauen).
-- [ ] Die API-Endpunkte verbessern (z. B. Highscores sortieren und nur die Top 10 zurückgeben).
+- [X] Den Namen des Spielers und das Spielergebnis automatisch in der Datenbank speichern.
+- [X] Ein Leaderboard erstellen, damit verschiedene Nutzer die gespeicherten Highscores sehen können.
+- [X] Die Scores vom Backend im Spiel anzeigen (Leaderboard im Menü oder Game Over Screen einbauen).
+- [X] Die API-Endpunkte verbessern (z. B. Highscores sortieren und nur die Top 10 zurückgeben).
 
 ✍️ Heute habe ich… (50–100 Wörter)
+Heute bin ich mit meinem Projekt und somit mit der Lernperiode 9 fertig. Ich bin sehr zufrieden mit dem Endergebnis. Der Nutzer sieht seinen Highscore und auch die Top 10. Alles wird zudem in der Datenbank gespeichert.
 
 ☝️ Vergessin sie nicht, ihren Code auf Github hochzuladen
 
