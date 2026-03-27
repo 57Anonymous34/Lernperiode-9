@@ -1,6 +1,7 @@
 local love = require "love"
 local enemy = require "Enemy"
 local button = require "Button"
+local json = require "dkjson"
 
 math.randomseed(os.time())
 
@@ -50,6 +51,8 @@ local enemies = {}
 local logo
 local playerName = ""
 local enteringName = true
+local scoreSaved = false
+local highscores = {}
 
 local function changeGameState(state)
     game.state.menu = state == "menu"
@@ -58,11 +61,62 @@ local function changeGameState(state)
     game.state.ended = state == "ended"
 end
 
+local function saveScore()
+    if playerName ~= "" then
+        local score = math.floor(game.points)
+
+        local command = string.format(
+            'curl -X POST http://localhost:3000/score -H "Content-Type: application/json" -d "{\\"player_name\\":\\"%s\\",\\"score\\":%d}"',
+            playerName,
+            score
+        )
+
+        os.execute(command)
+    end
+end
+
+
+
+
+local function fetchHighscores()
+    local command = 'curl http://localhost:3000/highscores > highscores.json'
+    os.execute(command)
+
+    local file = io.open("highscores.json", "r")
+    if file then
+        local content = file:read("*all")
+        file:close()
+
+        print("RAW JSON:")
+        print(content)
+
+        local data, pos, err = json.decode(content, 1, nil)
+
+        if data and type(data) == "table" then
+            highscores = data
+            print("Highscores geladen:", #highscores)
+        else
+            print("JSON Fehler:", err)
+            highscores = {}
+        end
+    else
+        print("Datei nicht gefunden")
+        highscores = {}
+    end
+end
+
+
+
+
+
+
 local function startNewGame()
     if playerName ~= "" then
         enteringName = false
         changeGameState("running")
         game.points = 0
+        scoreSaved = false
+        highscores = {}
 
         enemies = {
             enemy(2)
@@ -142,7 +196,13 @@ function love.update(dt)
                     end
                 end
             else
+                if not scoreSaved then
+                    saveScore()
+                    fetchHighscores()
+                    scoreSaved = true
+                end
                 changeGameState("ended")
+                break
             end
         end
 
@@ -176,17 +236,15 @@ function love.draw()
         love.graphics.circle("fill", player.x, player.y, player.radius)
 
     elseif game.state.menu then
-       
         local scaleX = screenWidth / logo:getWidth()
         local scaleY = screenHeight / logo:getHeight()
+
         love.graphics.setColor(1, 1, 1)
         love.graphics.draw(logo, 0, 0, 0, scaleX, scaleY)
 
-        
         love.graphics.setColor(0, 0, 0, 0.25)
         love.graphics.rectangle("fill", 0, 0, screenWidth, screenHeight)
 
-        
         love.graphics.setFont(fonts.medium.font)
         love.graphics.setColor(1, 1, 1)
         love.graphics.printf("Name eingeben:", 0, screenHeight - 220, screenWidth, "center")
@@ -203,12 +261,12 @@ function love.draw()
         love.graphics.rectangle("line", inputX, inputY, inputWidth, inputHeight)
         love.graphics.printf(playerName, inputX, inputY + 10, inputWidth, "center")
 
-        
         local buttonX = screenWidth / 2 - 90
         buttons.menu_state.play_game:draw(buttonX, screenHeight - 115)
         buttons.menu_state.exit_game:draw(buttonX, screenHeight - 55)
 
     elseif game.state.ended then
+         print(#highscores)
         local centerX = screenWidth / 2
         local buttonWidth = 130
         local buttonX = centerX - buttonWidth / 2
@@ -219,23 +277,44 @@ function love.draw()
         love.graphics.printf(
             "Game Over",
             0,
-            90,
+            70,
             screenWidth,
             "center"
+            
         )
 
         love.graphics.setFont(fonts.score.font)
         love.graphics.printf(
             math.floor(game.points),
             0,
-            170,
+            140,
             screenWidth,
             "center"
         )
 
-        buttons.ended_state.replay_game:draw(buttonX, 350)
-        buttons.ended_state.menu:draw(buttonX, 420)
-        buttons.ended_state.exit_game:draw(buttonX, 490)
+        love.graphics.setFont(fonts.medium.font)
+        love.graphics.printf(
+            "Top 10 Highscores",
+            0,
+            210,
+            screenWidth,
+            "center"
+        )
+
+        love.graphics.setFont(fonts.small.font)
+        for i, score in ipairs(highscores) do
+            love.graphics.printf(
+                i .. ". " .. score.player_name .. " - " .. score.score,
+                0,
+                240 + (i * 22),
+                screenWidth,
+                "center"
+            )
+        end
+
+        buttons.ended_state.replay_game:draw(buttonX, 500)
+        buttons.ended_state.menu:draw(buttonX, 560)
+        buttons.ended_state.exit_game:draw(buttonX, 620)
     end
 
     if not game.state.running then

@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Save the Ball API läuft" });
 });
 
-// Score speichern
+
 app.post("/score", (req, res) => {
   const { player_name, score } = req.body;
 
@@ -48,7 +48,7 @@ app.post("/score", (req, res) => {
   );
 });
 
-// Highscores abrufen
+
 app.get("/highscores", (req, res) => {
   db.all(
     "SELECT player_name, score, created_at FROM highscores ORDER BY score DESC LIMIT 10",
